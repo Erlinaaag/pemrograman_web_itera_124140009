@@ -36,11 +36,11 @@ Aplikasi kasir sederhana berbasis HTML, CSS, dan JavaScript (vanilla) untuk tuga
 
 <h2>Screenshot Project</h2>
 
-<h3>1. Tampilan Utama</h3>
+<h3>1. Tampilan Keranjang</h3>
 <img src="assets/gambar1.png" width="700">
 
-<h3>2. Tampilan Kasir</h3>
+<h3>2. Tampilan Invalid Data</h3>
 <img src="assets/gambar2.png" width="700">
 
-<h3>3. Tampilan Modul</h3>
+<h3>3. Tampilan Pembayaran</h3>
 <img src="assets/gambar3.png" width="700">
