@@ -1,0 +1,510 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Latihan JavaScript - Erlin</title>
+
+    <style>
+        :root {
+            --p1: #fff0f6;
+            --p2: #ffe0ee;
+            --p3: #ffb3d1;
+            --p5: #ff6fa5;
+            --p7: #d6407d;
+            --ink: #5a2a41;
+            --card: #ffffff;
+        }
+
+        body {
+            font-family: 'Poppins', system-ui, sans-serif;
+            margin: 0;
+            color: var(--ink);
+            background: linear-gradient(
+                160deg,
+                var(--p1),
+                var(--p2) 60%,
+                #ffd6e8
+            );
+            background-attachment: fixed;
+        }
+
+        body.dark {
+            --ink: #ffd6e8;
+            --card: #3a2230;
+            --p1: #2b1b24;
+            --p2: #2b1b24;
+            --p3: #8a3f61;
+
+            background: #2b1b24;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 15px 15px;
+        }
+
+        h1 {
+            margin: 0;
+            color: var(--p7);
+        }
+
+        body.dark h1 {
+            color: #ff9cc4;
+        }
+
+        header p {
+            margin: 8px 0 15px;
+        }
+
+        main {
+            max-width: 900px;
+            margin: auto;
+            padding: 0 14px 40px;
+        }
+
+        section {
+            background: var(--card);
+            border: 2px solid var(--p3);
+            border-radius: 20px;
+            padding: 18px;
+            margin: 18px 0;
+            box-shadow: 0 6px 18px rgba(255, 111, 165, 0.15);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: var(--p7);
+        }
+
+        body.dark h2 {
+            color: #ff9cc4;
+        }
+
+        h3 {
+            margin: 18px 0 8px;
+        }
+
+        input {
+            border: 2px solid var(--p2);
+            border-radius: 10px;
+            padding: 9px 11px;
+            margin: 4px;
+            font: inherit;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--p5);
+        }
+
+        button {
+            background: var(--p5);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 9px 15px;
+            margin: 4px;
+            font: inherit;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: var(--p7);
+        }
+
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        pre {
+            background: var(--p1);
+            color: var(--ink);
+            border-radius: 10px;
+            padding: 12px;
+            white-space: pre-wrap;
+            max-height: 220px;
+            overflow: auto;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            border-bottom: 1px solid var(--p2);
+            text-align: left;
+        }
+
+        th {
+            background: var(--p1);
+            color: var(--p7);
+        }
+
+        .err {
+            color: #e11d48;
+            font-size: 0.85em;
+            min-height: 1.1em;
+            margin-top: 3px;
+        }
+
+        .done {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>🌸 Latihan Modul JavaScript</h1>
+
+        <p>
+            Erlin Agesti Risadi
+            &bull;
+            Kelas RB
+            &bull;
+            124140009
+        </p>
+
+        <button id="btnDark">
+            🌙 Dark Mode
+        </button>
+    </header>
+
+
+    <main>
+
+        <!-- A. Variabel dan Kondisional -->
+        <section>
+            <h2>A. Variabel dan Kondisional</h2>
+
+            <input
+                id="aNama"
+                type="text"
+                placeholder="Masukkan nama"
+            >
+
+            <input
+                id="aUmur"
+                type="number"
+                placeholder="Masukkan umur"
+            >
+
+            <input
+                id="aKota"
+                type="text"
+                placeholder="Masukkan kota asal"
+            >
+
+            <input
+                id="aNilai"
+                type="number"
+                placeholder="Masukkan nilai"
+            >
+
+            <input
+                id="aHari"
+                type="number"
+                min="1"
+                max="7"
+                placeholder="Hari (1-7)"
+            >
+
+            <button id="btnA">
+                Proses Data
+            </button>
+
+            <pre id="outA">
+Hasil akan ditampilkan di sini.
+            </pre>
+        </section>
+
+
+        <!-- B. Loop dan Fungsi -->
+        <section>
+            <h2>B. Loop dan Fungsi</h2>
+
+            <h3>Tabel Perkalian</h3>
+
+            <input
+                id="bKali"
+                type="number"
+                placeholder="Masukkan angka"
+            >
+
+            <button id="btnKali">
+                Tampilkan
+            </button>
+
+            <pre id="outKali"></pre>
+
+
+            <h3>Faktorial dan Bilangan Prima</h3>
+
+            <input
+                id="bFak"
+                type="number"
+                placeholder="Angka faktorial"
+            >
+
+            <button id="btnFak">
+                Hitung Faktorial
+            </button>
+
+            <input
+                id="bPrima"
+                type="number"
+                placeholder="Angka yang diperiksa"
+            >
+
+            <button id="btnPrima">
+                Cek Bilangan Prima
+            </button>
+
+            <pre id="outFak"></pre>
+
+
+            <h3>Kalkulator BMI</h3>
+
+            <input
+                id="bmiBerat"
+                type="number"
+                placeholder="Berat badan (kg)"
+            >
+
+            <input
+                id="bmiTinggi"
+                type="number"
+                placeholder="Tinggi badan (cm)"
+            >
+
+            <button id="btnBmi">
+                Hitung BMI
+            </button>
+
+            <pre id="outBmi"></pre>
+
+
+            <h3>FizzBuzz 1-100</h3>
+
+            <p>
+                Menampilkan angka 1 sampai 100 dengan aturan FizzBuzz.
+            </p>
+
+            <button id="btnFizz">
+                Jalankan FizzBuzz
+            </button>
+
+            <pre id="outFizz"></pre>
+        </section>
+
+
+        <!-- C. Array dan Objek -->
+        <section>
+            <h2>C. Array dan Objek</h2>
+
+            <h3>Data Mahasiswa</h3>
+
+            <p>
+                Kelola dan tampilkan data mahasiswa menggunakan konsep
+                array, objek, dan CRUD.
+            </p>
+
+            <div class="bar">
+                <div>
+                    <button id="btnTertinggi">
+                        Nilai Tertinggi
+                    </button>
+
+                    <button id="btnAtas">
+                        Di Atas Rata-rata
+                    </button>
+
+                    <button id="btnAsc">
+                        Nama A-Z
+                    </button>
+
+                    <button id="btnDesc">
+                        Nama Z-A
+                    </button>
+
+                    <button id="btnSemua">
+                        Tampilkan Semua
+                    </button>
+                </div>
+            </div>
+
+            <pre id="outC"></pre>
+
+            <div id="tabelC"></div>
+
+
+            <h3 id="judulForm">
+                Tambah Data Mahasiswa
+            </h3>
+
+            <input
+                type="hidden"
+                id="cId"
+            >
+
+            <input
+                id="cNama"
+                type="text"
+                placeholder="Nama mahasiswa"
+            >
+
+            <input
+                id="cNim"
+                type="text"
+                placeholder="NIM"
+            >
+
+            <input
+                id="cNilai"
+                type="number"
+                placeholder="Nilai"
+            >
+
+            <button id="btnSimpanC">
+                Simpan Data
+            </button>
+
+            <button id="btnBatalC">
+                Batal
+            </button>
+
+            <div
+                class="err"
+                id="errC"
+            ></div>
+        </section>
+
+
+        <!-- D. DOM dan API -->
+        <section>
+            <h2>D. DOM dan API</h2>
+
+
+            <h3>Form Mahasiswa</h3>
+
+            <p>
+                Tambahkan data mahasiswa dan simpan menggunakan
+                localStorage.
+            </p>
+
+            <input
+                id="dNama"
+                type="text"
+                placeholder="Nama mahasiswa"
+            >
+
+            <input
+                id="dNim"
+                type="text"
+                placeholder="NIM (9 digit)"
+            >
+
+            <input
+                id="dNilai"
+                type="number"
+                placeholder="Nilai (0-100)"
+            >
+
+            <button id="btnD">
+                Tambahkan Data
+            </button>
+
+            <div
+                class="err"
+                id="errD"
+            ></div>
+
+            <div id="tabelD"></div>
+
+
+            <h3>Post API JSONPlaceholder</h3>
+
+            <p>
+                Cari data berdasarkan judul dan gunakan fitur pagination
+                untuk berpindah halaman.
+            </p>
+
+            <input
+                id="cariPost"
+                type="text"
+                placeholder="Cari berdasarkan judul..."
+            >
+
+            <ul id="listPost"></ul>
+
+            <button id="prev">
+                Previous
+            </button>
+
+            <span id="halaman"></span>
+
+            <button id="next">
+                Next
+            </button>
+
+
+            <h3>Todo List</h3>
+
+            <p>
+                Tambahkan dan kelola daftar tugas sederhana.
+            </p>
+
+            <input
+                id="todoInput"
+                type="text"
+                placeholder="Masukkan tugas..."
+            >
+
+            <button id="btnTodo">
+                Tambah Tugas
+            </button>
+
+            <div
+                class="err"
+                id="errTodo"
+            ></div>
+
+            <ul id="listTodo"></ul>
+        </section>
+
+    </main>
+
+
+    <script src="latihan-modul.js"></script>
+
+</body>
+
+</html>
+```
